@@ -324,18 +324,62 @@
     .btn-outline:hover { border-color: var(--green); color: var(--green); }
     .btn-sm { padding: 9px 16px; font-size: 0.82rem; border-radius: 10px; }
 
-    /* ─── STICKY MOBILE CTA ─── */
+    /* ─── SOCIAL PROOF BAR ─── */
+    .social-proof { max-width: 900px; margin: 0 auto; padding: 0 24px 20px; position: relative; z-index: 1; }
+    .sp-inner {
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      background: var(--surface); border: 1px solid var(--border2); border-radius: 12px;
+      padding: 12px 20px; flex-wrap: wrap;
+    }
+    .sp-rating { display: flex; align-items: center; gap: 8px; }
+    .stars { color: #f5c842; font-size: 0.95rem; letter-spacing: 1px; }
+    .sp-text { font-size: 0.78rem; color: var(--muted); }
+    .sp-text strong { color: var(--text); }
+    .sp-divider { width: 1px; height: 20px; background: var(--border2); }
+    .sp-counter { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--muted); }
+    .counter-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 1.5s infinite; flex-shrink: 0; }
+    .counter-num { color: var(--green); font-weight: 700; font-family: var(--ff-d); }
+
+    /* ─── TLDR BLOCK ─── */
+    .tldr {
+      background: linear-gradient(135deg, rgba(61,220,132,0.06) 0%, rgba(61,220,132,0.02) 100%);
+      border: 1px solid rgba(61,220,132,0.2); border-radius: var(--r); padding: 24px 28px; margin-bottom: 32px;
+    }
+    .s2 .tldr { background: linear-gradient(135deg, rgba(245,200,66,0.06) 0%, rgba(245,200,66,0.02) 100%); border-color: rgba(245,200,66,0.2); }
+    .s3 .tldr { background: linear-gradient(135deg, rgba(77,159,255,0.06) 0%, rgba(77,159,255,0.02) 100%); border-color: rgba(77,159,255,0.2); }
+    .tldr-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+    .s1 .tldr-label { color: var(--green); }
+    .s2 .tldr-label { color: var(--gold); }
+    .s3 .tldr-label { color: var(--blue); }
+    .tldr-title { font-family: var(--ff-d); font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
+    .tldr-steps { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .tldr-step { display: flex; align-items: flex-start; gap: 10px; font-size: 0.84rem; color: var(--muted); line-height: 1.5; }
+    .tldr-step-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; font-family: var(--ff-d); }
+    .s1 .tldr-step-num { background: rgba(61,220,132,0.15); color: var(--green); }
+    .s2 .tldr-step-num { background: rgba(245,200,66,0.15); color: var(--gold); }
+    .s3 .tldr-step-num { background: rgba(77,159,255,0.15); color: var(--blue); }
+    .tldr-step strong { color: var(--text); }
+    .tldr-bonus { font-size: 0.78rem; padding: 8px 12px; border-radius: 8px; margin-top: 4px; }
+    .s1 .tldr-bonus { background: rgba(61,220,132,0.08); color: var(--green); }
+    .s2 .tldr-bonus { background: rgba(245,200,66,0.08); color: var(--gold); }
+    .s3 .tldr-bonus { background: rgba(77,159,255,0.08); color: var(--blue); }
+
+    /* ─── STICKY MOBILE START HERE ─── */
     .sticky-cta {
       display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
       background: rgba(11,15,12,0.96); backdrop-filter: blur(12px);
       border-top: 1px solid var(--border); padding: 12px 20px;
-      flex-direction: row; gap: 10px;
     }
-    .sticky-cta a { flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px; border-radius: 10px; font-family: var(--ff-b); font-size: 0.84rem; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
-    .sticky-cta a:hover { opacity: 0.88; }
-    .sticky-cta .s-attapoll { background: var(--green); color: #0b0f0c; }
-    .sticky-cta .s-freecash { background: var(--surface2); color: var(--gold); border: 1px solid rgba(245,200,66,0.25); }
-    @media(max-width:640px){ .sticky-cta { display: flex; } body { padding-bottom: 72px; } }
+    .sticky-cta a {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; padding: 14px; border-radius: 12px;
+      background: var(--green); color: #0b0f0c;
+      font-family: var(--ff-b); font-size: 0.92rem; font-weight: 700;
+      text-decoration: none; transition: background 0.2s;
+      box-shadow: 0 4px 20px rgba(61,220,132,0.35);
+    }
+    .sticky-cta a:hover { background: var(--green-dim); }
+    @media(max-width:640px){ .sticky-cta { display: block; } body { padding-bottom: 76px; } }
 
     /* ─── FOOTER ─── */
     footer { position: relative; z-index: 1; text-align: center; padding: 28px 24px 40px; border-top: 1px solid var(--border2); margin-top: 40px; }
@@ -377,16 +421,6 @@
   <div class="hero-eyebrow"><span></span> Tested platforms. Real payouts. Zero investment.</div>
   <h1 class="hero-title">Get paid for your time —<br /><em>starting today, for free.</em></h1>
   <p class="hero-sub">Pick surveys, play games, or build a referral income. Complete guides for every path — no experience needed, no money required.</p>
-
-  <div class="hero-rating">
-    <span class="stars">★★★★★</span>
-    <span class="rating-text"><strong>4.7 / 5</strong> — rated by active earners across both platforms</span>
-  </div>
-
-  <div class="hero-counter">
-    <span class="counter-dot"></span>
-    <span><span class="counter-num" id="counter">2,847</span> people joined via BonusTask this week</span>
-  </div>
 
   <div class="hero-trust">
     <span>100% free to join</span>
@@ -450,7 +484,20 @@
 <!-- ─── MICRO HOOK ─── -->
 <div class="micro-hook" id="micro-hook">Pick the method that fits your time. <strong>All three are free to start.</strong></div>
 
-<!-- ─── PATH CARDS ─── -->
+<!-- ─── SOCIAL PROOF ─── -->
+<div class="social-proof" id="social-proof">
+  <div class="sp-inner">
+    <div class="sp-rating">
+      <span class="stars">★★★★★</span>
+      <span class="sp-text"><strong>4.7 / 5</strong> rated by active earners</span>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-counter">
+      <span class="counter-dot"></span>
+      <span><span class="counter-num" id="counter">2,847</span> people joined via BonusTask this week</span>
+    </div>
+  </div>
+</div>
 <div class="paths" id="path-cards">
   <div class="path-card p1" onclick="showSection('s1')">
     <span class="path-icon">📋</span>
@@ -560,8 +607,20 @@
     <span class="pb pb-gold">💰 FreeCash</span>
   </div>
 
-  <div class="content-block">
-    <h3><span class="ico">🔍</span> How Survey Matching Works</h3>
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to sign up and start earning surveys in under 5 minutes</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Go to <strong>attapoll.app/join/znjuz</strong> and create a free account with your email</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Download the AttaPoll app (iOS or Android) and log in</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span><strong>Complete your profile fully</strong> — employment, household, vehicle, health. This is the most important step.</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Go to the Surveys tab and start with any available survey. The first few are short — they help calibrate your profile.</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Reach the minimum threshold and cash out via <strong>PayPal</strong></span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Also sign up at <strong>freecash.com/en?ref=2DG2B8</strong> — complete profile surveys there too and stack both platforms daily</span></div>
+    </div>
+    <div class="tldr-bonus">💡 FreeCash sign-up bonus: up to $10 account credit depending on your region — verify your email immediately after signing up to claim it.</div>
+  </div>
     <p>Platforms match you to surveys based on your demographic profile — age, location, income, household, employment, and more. The more complete and accurate your profile, the more surveys you qualify for and the fewer disqualifications you'll hit.</p>
     <p>Think of your profile as your resume. A complete resume gets more interviews. Fill it out on every platform before you take your first survey.</p>
     <ul>
@@ -681,8 +740,20 @@
     <span class="pb pb-green">📊 AttaPoll Referrals</span>
   </div>
 
-  <div class="content-block">
-    <h3><span class="ico">⚡</span> Why Referrals Create Leverage</h3>
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to get your referral link and start earning passive income</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Sign up at <strong>attapoll.app/join/znjuz</strong> and complete your profile — your real earnings become your credibility</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Open the app menu → tap <strong>"Refer Friends"</strong> → copy your unique referral link</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span>Create a free <strong>Bitly</strong> account and shorten your link so you can track clicks by platform</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Post on <strong>Facebook Groups</strong> (make money from home, side hustle groups) — earnings screenshot + link in comments</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Create a <strong>TikTok account</strong> (@bonustask or similar) — screen record your app earnings, post daily for 30 days</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Answer questions on <strong>Reddit</strong> (r/beermoney, r/sidehustle) and <strong>Quora</strong> with honest reviews + your referral link disclosed</span></div>
+    </div>
+    <div class="tldr-bonus">💡 You earn a % of your referrals' survey earnings every month, permanently. Focus on getting people to activate their profiles — not just sign up.</div>
+  </div>
     <p>Most side income is linear — you work an hour, you earn for that hour. Referrals break that. When someone you referred completes a survey, you earn without doing anything. That compounds every month as your referral base grows.</p>
     <ul>
       <li><strong>Compounding base</strong> — referrals from 3 months ago still pay you today</li>
@@ -776,8 +847,20 @@
     <span class="pb pb-gold">💰 FreeCash</span>
   </div>
 
-  <div class="content-block">
-    <h3><span class="ico">🎮</span> How Game Offers Work</h3>
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to start earning from games and tasks in under 10 minutes</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Sign up at <strong>freecash.com/en?ref=2DG2B8</strong> — FreeCash has the largest game offer wall. Verify your email to claim your sign-up bonus (up to $10, region dependent).</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Go to the <strong>Earn</strong> tab → filter by <strong>Games</strong> → sort by highest reward</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span>Read the full requirement before accepting any offer — note the deadline and confirm the milestone is achievable without paying</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Download the game, <strong>screenshot your starting point</strong>, and play daily until you hit the milestone</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Once complete, the reward is credited automatically. If it doesn't track within 24–48hrs, submit a <strong>support ticket with your screenshots</strong></span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Also sign up at <strong>attapoll.app/join/znjuz</strong> and check their game/task offers — stack both platforms for maximum daily output</span></div>
+    </div>
+    <div class="tldr-bonus">💡 Best starting offers: look for puzzle or idle games with a "Reach Level X" requirement and no time limit. Those are the safest and most consistent earners.</div>
+  </div>
     <p>Game offers are performance-based. Download a game, reach a specific milestone, get paid the listed amount. Payout is fixed and shown upfront — no surprises.</p>
     <ul>
       <li><strong>Read the full requirement</strong> — "Reach level 10" vs "Reach level 10 within 7 days" are completely different</li>
@@ -872,15 +955,14 @@
   </p>
 </footer>
 
-<!-- ─── STICKY MOBILE CTA ─── -->
+<!-- ─── STICKY MOBILE START HERE ─── -->
 <div class="sticky-cta" id="sticky-cta">
-  <a class="s-attapoll" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">📊 Join AttaPoll Free</a>
-  <a class="s-freecash" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener">💰 FreeCash</a>
+  <a href="#path-cards" onclick="event.preventDefault();scrollToPaths()">✦ Start Here — Pick Your Path ↓</a>
 </div>
 
 <script>
   /* ── HOME BLOCK IDS ── */
-  const homeBlocks = ['home','how-it-works','calculator','micro-hook','path-cards','comparison','decision-helper'];
+  const homeBlocks = ['home','how-it-works','calculator','micro-hook','social-proof','path-cards','comparison','decision-helper'];
 
   function showHome() {
     homeBlocks.forEach(id => {
