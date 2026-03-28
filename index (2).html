@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BonusTask.com — Earn Real Money Online, Free to Start</title>
+  <meta name="description" content="Surveys, games, and referrals that actually pay. Free to join, no experience needed. Start earning today on AttaPoll and FreeCash." />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #3ddc84;
+      --green-dim:  #2ab86a;
+      --green-glow: rgba(61, 220, 132, 0.15);
+      --gold:       #f5c842;
+      --blue:       #4d9fff;
+      --bg:         #0b0f0c;
+      --surface:    #111813;
+      --surface2:   #161e17;
+      --border:     rgba(61, 220, 132, 0.13);
+      --border2:    rgba(255,255,255,0.06);
+      --text:       #e8f5ee;
+      --muted:      #6b8f78;
+      --muted2:     #4a6655;
+      --ff-d: 'Syne', sans-serif;
+      --ff-b: 'DM Sans', sans-serif;
+      --r: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--ff-b); min-height: 100vh; overflow-x: hidden; }
+
+    .bg-glow {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 35% at 50% -5%, rgba(61,220,132,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 35% 25% at 90% 110%, rgba(61,220,132,0.05) 0%, transparent 60%);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(11,15,12,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px;
+    }
+    .nav-logo { display: flex; flex-direction: column; gap: 2px; cursor: pointer; }
+    .nav-logo img { height: 40px; display: block; }
+    .nav-tagline { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted2); font-weight: 500; padding-left: 2px; }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links button {
+      background: none; border: none; cursor: pointer; color: var(--muted);
+      font-family: var(--ff-b); font-size: 0.8rem; font-weight: 500;
+      padding: 6px 12px; border-radius: 8px; transition: color 0.2s, background 0.2s;
+    }
+    .nav-links button:hover, .nav-links button.active { color: var(--green); background: var(--green-glow); }
+    .nav-cta {
+      background: var(--green); color: #0b0f0c; border: none; cursor: pointer;
+      border-radius: 8px; font-family: var(--ff-b); font-size: 0.8rem; font-weight: 600;
+      padding: 8px 16px; text-decoration: none; display: inline-block;
+      transition: background 0.2s, box-shadow 0.2s; box-shadow: 0 2px 12px rgba(61,220,132,0.25);
+    }
+    .nav-cta:hover { background: var(--green-dim); box-shadow: 0 4px 18px rgba(61,220,132,0.4); }
+
+    /* ─── HERO ─── */
+    #home { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 72px 24px 20px; text-align: center; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(61,220,132,0.1); border: 1px solid var(--border);
+      border-radius: 99px; padding: 5px 14px; font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 24px;
+    }
+    .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+    h1.hero-title {
+      font-family: var(--ff-d); font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 18px;
+    }
+    h1.hero-title em { font-style: normal; color: var(--green); }
+    .hero-sub { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 16px; line-height: 1.7; }
+
+    /* STAR RATING */
+    .hero-rating {
+      display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;
+    }
+    .stars { color: #f5c842; font-size: 1rem; letter-spacing: 2px; }
+    .rating-text { font-size: 0.8rem; color: var(--muted); }
+    .rating-text strong { color: var(--text); }
+
+    /* COUNTER */
+    .hero-counter {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(61,220,132,0.07); border: 1px solid rgba(61,220,132,0.15);
+      border-radius: 99px; padding: 5px 14px; margin-bottom: 20px;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .counter-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 1.5s infinite; flex-shrink: 0; }
+    .counter-num { color: var(--green); font-weight: 700; font-family: var(--ff-d); }
+
+    .hero-trust { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 0; }
+    .hero-trust span { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+    .hero-trust span::before { content: '✓'; color: var(--green); font-weight: 700; }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-it-works { max-width: 900px; margin: 0 auto; padding: 28px 24px 48px; position: relative; z-index: 1; }
+    .hiw-label { text-align: center; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); margin-bottom: 20px; font-weight: 600; }
+    .hiw-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .hiw-step { background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; padding: 20px 18px; text-align: center; position: relative; }
+    .hiw-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--green-glow); border: 1px solid rgba(61,220,132,0.25);
+      font-family: var(--ff-d); font-size: 0.8rem; font-weight: 700; color: var(--green); margin-bottom: 10px;
+    }
+    .hiw-step h4 { font-family: var(--ff-d); font-size: 0.9rem; font-weight: 700; margin-bottom: 5px; }
+    .hiw-step p  { font-size: 0.77rem; color: var(--muted); line-height: 1.5; }
+    @media(min-width:600px){
+      .hiw-step:not(:last-child)::after {
+        content: '→'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+        color: var(--muted2); font-size: 0.9rem; z-index: 2;
+      }
+    }
+
+    /* ─── EARNING CALCULATOR ─── */
+    .calculator {
+      max-width: 900px; margin: 0 auto; padding: 0 24px 48px; position: relative; z-index: 1;
+    }
+    .calc-box {
+      background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r); padding: 28px;
+    }
+    .calc-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 6px; }
+    .calc-title { font-family: var(--ff-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+    .calc-controls { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .calc-btn {
+      background: var(--surface2); border: 1px solid var(--border2); border-radius: 10px;
+      color: var(--muted); font-family: var(--ff-b); font-size: 0.82rem; font-weight: 500;
+      padding: 8px 16px; cursor: pointer; transition: all 0.2s;
+    }
+    .calc-btn.active { background: var(--green-glow); border-color: var(--green); color: var(--green); }
+    .calc-result {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+    }
+    .calc-stat {
+      background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px;
+      padding: 16px; text-align: center;
+    }
+    .calc-stat-val { font-family: var(--ff-d); font-size: 1.4rem; font-weight: 800; color: var(--green); margin-bottom: 4px; }
+    .calc-stat-label { font-size: 0.72rem; color: var(--muted); }
+    .calc-note { font-size: 0.75rem; color: var(--muted2); margin-top: 14px; line-height: 1.5; }
+
+    /* ─── MICRO HOOK ─── */
+    .micro-hook { text-align: center; font-size: 0.8rem; color: var(--muted); padding: 8px 24px 16px; max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .micro-hook strong { color: var(--green); font-weight: 600; }
+
+    /* ─── DECISION HELPER ─── */
+    .decision-helper { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; position: relative; z-index: 1; }
+    .dh-label { text-align: center; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); margin-bottom: 16px; font-weight: 600; }
+    .dh-title { text-align: center; font-family: var(--ff-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+    .dh-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .dh-option { background: var(--surface2); border: 1px solid var(--border2); border-radius: 14px; padding: 16px; text-align: center; cursor: pointer; transition: border-color 0.2s, transform 0.15s; }
+    .dh-option:hover { transform: translateY(-2px); }
+    .dh-option.d1:hover { border-color: var(--green); }
+    .dh-option.d2:hover { border-color: var(--blue); }
+    .dh-option.d3:hover { border-color: var(--gold); }
+    .dh-goal { font-size: 0.67rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+    .d1 .dh-goal { color: var(--green); }
+    .d2 .dh-goal { color: var(--blue); }
+    .d3 .dh-goal { color: var(--gold); }
+    .dh-label2 { font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; }
+    .dh-note { font-size: 0.73rem; color: var(--muted); }
+
+    /* ─── PATH CARDS ─── */
+    .paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; max-width: 900px; margin: 0 auto; padding: 0 24px 48px; position: relative; z-index: 1; }
+    .path-card {
+      background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r);
+      padding: 28px 24px; cursor: pointer; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      text-align: left; position: relative; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .path-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.25s; }
+    .path-card.p1::before { background: radial-gradient(ellipse at top left, rgba(61,220,132,0.1), transparent 70%); }
+    .path-card.p2::before { background: radial-gradient(ellipse at top left, rgba(245,200,66,0.1), transparent 70%); }
+    .path-card.p3::before { background: radial-gradient(ellipse at top left, rgba(77,159,255,0.1), transparent 70%); }
+    .path-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .path-card:hover::before { opacity: 1; }
+    .path-card.p1:hover { border-color: var(--green); }
+    .path-card.p2:hover { border-color: var(--gold); }
+    .path-card.p3:hover { border-color: var(--blue); }
+    .path-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+    .path-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
+    .p1 .path-label { color: var(--green); }
+    .p2 .path-label { color: var(--gold); }
+    .p3 .path-label { color: var(--blue); }
+    .path-title { font-family: var(--ff-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+    .path-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .path-benefits { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+    .path-benefits li { font-size: 0.78rem; color: var(--muted); padding-left: 16px; position: relative; }
+    .path-benefits li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; font-size: 0.72rem; }
+    .p1 .path-benefits li::before { color: var(--green); }
+    .p2 .path-benefits li::before { color: var(--gold); }
+    .p3 .path-benefits li::before { color: var(--blue); }
+    .path-best-for { font-size: 0.72rem; color: var(--muted2); margin-bottom: 6px; }
+    .path-best-for strong { color: var(--muted); }
+    .path-expect { font-size: 0.72rem; padding: 6px 10px; border-radius: 8px; margin-bottom: 16px; line-height: 1.5; }
+    .p1 .path-expect { background: rgba(61,220,132,0.07); color: var(--green); }
+    .p2 .path-expect { background: rgba(245,200,66,0.07); color: var(--gold); }
+    .p3 .path-expect { background: rgba(77,159,255,0.07); color: var(--blue); }
+    .path-arrow { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; font-size: 0.82rem; font-weight: 600; transition: gap 0.2s; }
+    .p1 .path-arrow { color: var(--green); }
+    .p2 .path-arrow { color: var(--gold); }
+    .p3 .path-arrow { color: var(--blue); }
+    .path-card:hover .path-arrow { gap: 10px; }
+
+    /* ─── PLATFORM COMPARISON ─── */
+    .comparison { max-width: 900px; margin: 0 auto; padding: 0 24px 48px; position: relative; z-index: 1; }
+    .comp-label { text-align: center; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted2); margin-bottom: 16px; font-weight: 600; }
+    .comp-title { text-align: center; font-family: var(--ff-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+    .comp-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--r); overflow: hidden; border: 1px solid var(--border2); }
+    .comp-table th { padding: 14px 16px; font-size: 0.78rem; font-weight: 700; text-align: left; border-bottom: 1px solid var(--border2); }
+    .comp-table th:first-child { color: var(--muted2); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .comp-table th.col-a { color: var(--green); }
+    .comp-table th.col-b { color: var(--gold); }
+    .comp-table td { padding: 12px 16px; font-size: 0.83rem; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.03); vertical-align: top; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table td:first-child { color: var(--text); font-weight: 500; font-size: 0.8rem; }
+    .comp-check { color: var(--green); font-weight: 700; }
+    .comp-partial { color: var(--gold); }
+
+    /* ─── SECTIONS ─── */
+    .section { display: none; position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: 60px 24px 80px; animation: fadeUp 0.4s ease both; }
+    .section.active { display: block; }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px; background: none;
+      border: 1px solid var(--border2); border-radius: 8px; color: var(--muted); cursor: pointer;
+      font-family: var(--ff-b); font-size: 0.82rem; padding: 7px 14px; margin-bottom: 40px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-btn:hover { color: var(--text); border-color: var(--border); }
+    .section-eyebrow { display: inline-block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; }
+    .s1 .section-eyebrow { color: var(--green); }
+    .s2 .section-eyebrow { color: var(--gold); }
+    .s3 .section-eyebrow { color: var(--blue); }
+    h2.section-title { font-family: var(--ff-d); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
+    .section-intro { font-size: 0.95rem; color: var(--muted); line-height: 1.7; max-width: 600px; margin-bottom: 32px; }
+    .platform-badges { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+    .pb { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; }
+    .pb-green { background: rgba(61,220,132,0.12); color: var(--green); border: 1px solid rgba(61,220,132,0.2); }
+    .pb-gold  { background: rgba(245,200,66,0.12); color: var(--gold); border: 1px solid rgba(245,200,66,0.2); }
+
+    /* ─── CONTENT BLOCKS ─── */
+    .content-block { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--r); padding: 28px; margin-bottom: 20px; }
+    .content-block h3 { font-family: var(--ff-d); font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .content-block h3 .ico { font-size: 1rem; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 9px; flex-shrink: 0; }
+    .s1 .ico { background: rgba(61,220,132,0.12); }
+    .s2 .ico { background: rgba(245,200,66,0.12); }
+    .s3 .ico { background: rgba(77,159,255,0.12); }
+    .content-block p { font-size: 0.87rem; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+    .content-block p:last-child { margin-bottom: 0; }
+    .content-block ul, .content-block ol { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .content-block li { font-size: 0.85rem; color: var(--muted); line-height: 1.6; padding-left: 20px; position: relative; }
+    .content-block li::before { content: '→'; position: absolute; left: 0; font-size: 0.75rem; top: 2px; }
+    .s1 .content-block li::before { color: var(--green); }
+    .s2 .content-block li::before { color: var(--gold); }
+    .s3 .content-block li::before { color: var(--blue); }
+    .content-block li strong { color: var(--text); }
+
+    /* MISTAKES BLOCK */
+    .mistakes-block { background: rgba(255,80,80,0.05); border: 1px solid rgba(255,80,80,0.15); border-radius: var(--r); padding: 28px; margin-bottom: 20px; }
+    .mistakes-block h3 { font-family: var(--ff-d); font-size: 1rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; color: #ff7070; }
+    .mistakes-block h3 .ico { font-size: 1rem; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 9px; background: rgba(255,80,80,0.1); flex-shrink: 0; }
+    .mistakes-block li { font-size: 0.85rem; color: var(--muted); line-height: 1.6; padding-left: 20px; position: relative; margin-bottom: 9px; list-style: none; }
+    .mistakes-block li::before { content: '✗'; position: absolute; left: 0; font-size: 0.75rem; top: 2px; color: #ff7070; font-weight: 700; }
+    .mistakes-block li strong { color: var(--text); }
+    .mistakes-block ul { list-style: none; }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media(max-width:540px){ .grid2{grid-template-columns:1fr;} }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tag { font-size: 0.7rem; padding: 3px 10px; border-radius: 99px; border: 1px solid; font-weight: 500; }
+    .tag-green { background: rgba(61,220,132,0.1); color: var(--green); border-color: rgba(61,220,132,0.25); }
+    .tag-red   { background: rgba(255,80,80,0.08); color: #ff7070; border-color: rgba(255,80,80,0.2); }
+    .tag-gold  { background: rgba(245,200,66,0.1); color: var(--gold); border-color: rgba(245,200,66,0.25); }
+
+    .country-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    .country-table th { text-align: left; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted2); padding: 8px 10px; border-bottom: 1px solid var(--border2); }
+    .country-table td { padding: 10px; font-size: 0.83rem; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .country-table td:first-child { color: var(--text); font-weight: 500; }
+    .tier { padding: 2px 8px; border-radius: 99px; font-size: 0.68rem; font-weight: 700; }
+    .tier-s { background: rgba(61,220,132,0.15); color: var(--green); }
+    .tier-a { background: rgba(245,200,66,0.15); color: var(--gold); }
+    .tier-b { background: rgba(255,255,255,0.08); color: var(--muted); }
+
+    .steps { display: flex; flex-direction: column; gap: 16px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; }
+    .step-num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-d); font-size: 0.82rem; font-weight: 700; background: rgba(245,200,66,0.12); color: var(--gold); border: 1px solid rgba(245,200,66,0.22); }
+    .step-body h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+    .step-body p  { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    .hook-card { background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px; padding: 14px 16px; margin-top: 10px; }
+    .hook-platform { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 5px; }
+    .hook-text { font-size: 0.85rem; color: var(--text); line-height: 1.6; font-style: italic; }
+
+    .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--surface2); border: 1px solid var(--border2); border-radius: 14px; padding: 20px 24px; margin: 24px 0; }
+    .inline-cta p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; max-width: 400px; }
+    .inline-cta p strong { color: var(--text); display: block; font-size: 0.9rem; margin-bottom: 3px; }
+
+    .divider { display: flex; align-items: center; gap: 12px; margin: 32px 0; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border2); }
+    .divider span { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted2); }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 12px; font-family: var(--ff-b); font-size: 0.88rem; font-weight: 600; text-decoration: none; border: none; transition: transform 0.15s, box-shadow 0.15s; cursor: pointer; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-green { background: var(--green); color: #0b0f0c; box-shadow: 0 4px 20px rgba(61,220,132,0.3); }
+    .btn-green:hover { box-shadow: 0 6px 28px rgba(61,220,132,0.45); }
+    .btn-gold  { background: var(--gold); color: #0b0f0c; box-shadow: 0 4px 20px rgba(245,200,66,0.25); }
+    .btn-gold:hover { box-shadow: 0 6px 28px rgba(245,200,66,0.4); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
+    .btn-outline:hover { border-color: var(--green); color: var(--green); }
+    .btn-sm { padding: 9px 16px; font-size: 0.82rem; border-radius: 10px; }
+
+    /* ─── SOCIAL PROOF BAR ─── */
+    .social-proof { max-width: 900px; margin: 0 auto; padding: 0 24px 20px; position: relative; z-index: 1; }
+    .sp-inner {
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      background: var(--surface); border: 1px solid var(--border2); border-radius: 12px;
+      padding: 12px 20px; flex-wrap: wrap;
+    }
+    .sp-rating { display: flex; align-items: center; gap: 8px; }
+    .stars { color: #f5c842; font-size: 0.95rem; letter-spacing: 1px; }
+    .sp-text { font-size: 0.78rem; color: var(--muted); }
+    .sp-text strong { color: var(--text); }
+    .sp-divider { width: 1px; height: 20px; background: var(--border2); }
+    .sp-counter { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--muted); }
+    .counter-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 1.5s infinite; flex-shrink: 0; }
+    .counter-num { color: var(--green); font-weight: 700; font-family: var(--ff-d); }
+
+    /* ─── TLDR BLOCK ─── */
+    .tldr {
+      background: linear-gradient(135deg, rgba(61,220,132,0.06) 0%, rgba(61,220,132,0.02) 100%);
+      border: 1px solid rgba(61,220,132,0.2); border-radius: var(--r); padding: 24px 28px; margin-bottom: 32px;
+    }
+    .s2 .tldr { background: linear-gradient(135deg, rgba(245,200,66,0.06) 0%, rgba(245,200,66,0.02) 100%); border-color: rgba(245,200,66,0.2); }
+    .s3 .tldr { background: linear-gradient(135deg, rgba(77,159,255,0.06) 0%, rgba(77,159,255,0.02) 100%); border-color: rgba(77,159,255,0.2); }
+    .tldr-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+    .s1 .tldr-label { color: var(--green); }
+    .s2 .tldr-label { color: var(--gold); }
+    .s3 .tldr-label { color: var(--blue); }
+    .tldr-title { font-family: var(--ff-d); font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; }
+    .tldr-steps { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .tldr-step { display: flex; align-items: flex-start; gap: 10px; font-size: 0.84rem; color: var(--muted); line-height: 1.5; }
+    .tldr-step-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; font-family: var(--ff-d); }
+    .s1 .tldr-step-num { background: rgba(61,220,132,0.15); color: var(--green); }
+    .s2 .tldr-step-num { background: rgba(245,200,66,0.15); color: var(--gold); }
+    .s3 .tldr-step-num { background: rgba(77,159,255,0.15); color: var(--blue); }
+    .tldr-step strong { color: var(--text); }
+    .tldr-bonus { font-size: 0.78rem; padding: 8px 12px; border-radius: 8px; margin-top: 4px; }
+    .s1 .tldr-bonus { background: rgba(61,220,132,0.08); color: var(--green); }
+    .s2 .tldr-bonus { background: rgba(245,200,66,0.08); color: var(--gold); }
+    .s3 .tldr-bonus { background: rgba(77,159,255,0.08); color: var(--blue); }
+
+    /* ─── STICKY MOBILE START HERE ─── */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(11,15,12,0.96); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border); padding: 12px 20px;
+    }
+    .sticky-cta a {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; padding: 14px; border-radius: 12px;
+      background: var(--green); color: #0b0f0c;
+      font-family: var(--ff-b); font-size: 0.92rem; font-weight: 700;
+      text-decoration: none; transition: background 0.2s;
+      box-shadow: 0 4px 20px rgba(61,220,132,0.35);
+    }
+    .sticky-cta a:hover { background: var(--green-dim); }
+    @media(max-width:640px){ .sticky-cta { display: block; } body { padding-bottom: 76px; } }
+
+    /* ─── FOOTER ─── */
+    footer { position: relative; z-index: 1; text-align: center; padding: 28px 24px 40px; border-top: 1px solid var(--border2); margin-top: 40px; }
+    footer img { height: 32px; margin-bottom: 12px; display: block; margin-left: auto; margin-right: auto; }
+    footer p { font-size: 0.72rem; color: var(--muted2); line-height: 1.9; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)} }
+
+    @media(max-width:600px){ .hiw-steps{grid-template-columns:1fr;} .dh-options{grid-template-columns:1fr;} .calc-result{grid-template-columns:1fr 1fr;} }
+    @media(max-width:560px){
+      nav{padding:12px 16px;} .nav-links{display:none;}
+      #home{padding:56px 16px 20px;} .paths{padding:0 16px 40px;}
+      .section{padding:40px 16px 60px;} .how-it-works,.decision-helper,.calculator,.comparison{padding-left:16px;padding-right:16px;}
+      .inline-cta{flex-direction:column;} .comp-table th,.comp-table td{padding:10px 10px;font-size:0.75rem;}
+    }
+  </style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo" onclick="showHome()">
+    <img src="logo.png" alt="BonusTask.com" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <span class="nav-logo-text" style="display:none;font-family:var(--ff-d);font-size:1.2rem;font-weight:800;color:var(--text);">Bonus<span style="color:var(--green)">Task</span><span style="color:var(--muted);font-size:0.7rem;font-weight:500;">.com</span></span>
+    <span class="nav-tagline">Free &nbsp;·&nbsp; Simple &nbsp;·&nbsp; Legit</span>
+  </div>
+  <div class="nav-links">
+    <button onclick="showHome()" class="active" id="nav-home">Home</button>
+    <button onclick="showSection('s1')" id="nav-s1">Surveys</button>
+    <button onclick="showSection('s2')" id="nav-s2">Referrals</button>
+    <button onclick="showSection('s3')" id="nav-s3">Games</button>
+  </div>
+  <button class="nav-cta" onclick="scrollToPaths()">Start Here ↓</button>
+</nav>
+
+<!-- ─── HOME ─── -->
+<div id="home">
+  <div class="hero-eyebrow"><span></span> Tested platforms. Real payouts. Zero investment.</div>
+  <h1 class="hero-title">Get paid for your time —<br /><em>starting today, for free.</em></h1>
+  <p class="hero-sub">Pick surveys, play games, or build a referral income. Complete guides for every path — no experience needed, no money required.</p>
+
+  <div class="hero-trust">
+    <span>100% free to join</span>
+    <span>No experience needed</span>
+    <span>Real PayPal payouts</span>
+    <span>Works worldwide</span>
+  </div>
+</div>
+
+<!-- ─── HOW IT WORKS ─── -->
+<div class="how-it-works" id="how-it-works">
+  <div class="hiw-label">How it works</div>
+  <div class="hiw-steps">
+    <div class="hiw-step">
+      <div class="hiw-num">1</div>
+      <h4>Pick a Method</h4>
+      <p>Surveys, games, or referrals — choose what fits your time and goal.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">2</div>
+      <h4>Sign Up Free</h4>
+      <p>Create your account in under 60 seconds. No credit card, no cost.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">3</div>
+      <h4>Start Earning</h4>
+      <p>Complete tasks and cash out to PayPal, crypto, or gift cards.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── EARNING CALCULATOR ─── -->
+<div class="calculator" id="calculator">
+  <div class="calc-box">
+    <div class="calc-label">Earning Estimator</div>
+    <div class="calc-title">How much could you make?</div>
+    <div class="calc-controls">
+      <button class="calc-btn active" onclick="setCalc(this,10)">10 min/day</button>
+      <button class="calc-btn" onclick="setCalc(this,20)">20 min/day</button>
+      <button class="calc-btn" onclick="setCalc(this,30)">30 min/day</button>
+      <button class="calc-btn" onclick="setCalc(this,60)">1 hr/day</button>
+    </div>
+    <div class="calc-result">
+      <div class="calc-stat">
+        <div class="calc-stat-val" id="calc-week">$35</div>
+        <div class="calc-stat-label">Per week</div>
+      </div>
+      <div class="calc-stat">
+        <div class="calc-stat-val" id="calc-month">$150</div>
+        <div class="calc-stat-label">Per month</div>
+      </div>
+      <div class="calc-stat">
+        <div class="calc-stat-val" id="calc-year">$1,800</div>
+        <div class="calc-stat-label">Per year</div>
+      </div>
+    </div>
+    <div class="calc-note">* Estimates based on combining surveys + games across AttaPoll and FreeCash. Actual earnings depend on your country, offer availability, and consistency. These are realistic ranges, not guarantees.</div>
+  </div>
+</div>
+
+<!-- ─── MICRO HOOK ─── -->
+<div class="micro-hook" id="micro-hook">Pick the method that fits your time. <strong>All three are free to start.</strong></div>
+
+<!-- ─── SOCIAL PROOF ─── -->
+<div class="social-proof" id="social-proof">
+  <div class="sp-inner">
+    <div class="sp-rating">
+      <span class="stars">★★★★★</span>
+      <span class="sp-text"><strong>4.7 / 5</strong> rated by active earners</span>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-counter">
+      <span class="counter-dot"></span>
+      <span><span class="counter-num" id="counter">2,847</span> people joined via BonusTask this week</span>
+    </div>
+  </div>
+</div>
+<div class="paths" id="path-cards">
+  <div class="path-card p1" onclick="showSection('s1')">
+    <span class="path-icon">📋</span>
+    <div class="path-label">Path 1 — Fastest Start</div>
+    <div class="path-title">Take Surveys &amp; Get Paid</div>
+    <p class="path-desc">Answer questions on your phone or computer and earn cash directly to PayPal. Available on AttaPoll and FreeCash.</p>
+    <ul class="path-benefits">
+      <li>Start earning within minutes of signing up</li>
+      <li>No skills or experience required</li>
+      <li>Works on your phone, anywhere, anytime</li>
+    </ul>
+    <div class="path-best-for">Best for: <strong>Anyone with 10–30 free minutes a day</strong></div>
+    <div class="path-expect">💡 Realistic: $5–$20/day ($150–$600/month) with consistent daily effort</div>
+    <div class="path-arrow">Get the full guide <span>→</span></div>
+  </div>
+
+  <div class="path-card p2" onclick="showSection('s2')">
+    <span class="path-icon">💸</span>
+    <div class="path-label">Path 2 — Long-Term Income</div>
+    <div class="path-title">Build a Referral Side Hustle</div>
+    <p class="path-desc">Share your unique link and earn a percentage of what your referrals make — every month, permanently.</p>
+    <ul class="path-benefits">
+      <li>Compounding income — one referral pays you forever</li>
+      <li>No paid ads needed — TikTok, Facebook, Reddit work free</li>
+      <li>Complete playbook included: hooks, scripts, strategy</li>
+    </ul>
+    <div class="path-best-for">Best for: <strong>Anyone willing to post content consistently</strong></div>
+    <div class="path-expect">💡 Realistic: Up to $1,000/month as your referral base grows over time</div>
+    <div class="path-arrow">See the full playbook <span>→</span></div>
+  </div>
+
+  <div class="path-card p3" onclick="showSection('s3')">
+    <span class="path-icon">🎮</span>
+    <div class="path-label">Path 3 — Higher Single Payouts</div>
+    <div class="path-title">Earn Playing Games &amp; Tasks</div>
+    <p class="path-desc">Download games, hit milestones, and get paid. Some offers pay $5–$20+ for games you'd play anyway.</p>
+    <ul class="path-benefits">
+      <li>Higher per-task payouts than most surveys</li>
+      <li>Available on both AttaPoll and FreeCash</li>
+      <li>Stack multiple offers for daily passive earning</li>
+    </ul>
+    <div class="path-best-for">Best for: <strong>Mobile gamers who want to monetize playtime</strong></div>
+    <div class="path-expect">💡 Realistic: $5–$20/day ($150–$600/month) stacking the right offers</div>
+    <div class="path-arrow">See game strategies <span>→</span></div>
+  </div>
+</div>
+
+<!-- ─── PLATFORM COMPARISON ─── -->
+<div class="comparison" id="comparison">
+  <div class="comp-label">Platform Comparison</div>
+  <div class="comp-title">AttaPoll vs FreeCash — which is right for you?</div>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="col-a">📊 AttaPoll</th>
+        <th class="col-b">💰 FreeCash</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Best for</td><td>Mobile survey earners</td><td>Surveys + games + tasks combined</td></tr>
+      <tr><td>Platform</td><td>Mobile app (iOS &amp; Android)</td><td>Web + mobile app</td></tr>
+      <tr><td>Surveys</td><td><span class="comp-check">✓</span> Strong daily volume</td><td><span class="comp-check">✓</span> Multiple routers</td></tr>
+      <tr><td>Game offers</td><td><span class="comp-check">✓</span> Available</td><td><span class="comp-check">✓</span> Largest offer wall</td></tr>
+      <tr><td>Referral program</td><td><span class="comp-check">✓</span> % of referral earnings</td><td><span class="comp-partial">~</span> Basic referral bonus</td></tr>
+      <tr><td>Min. cashout</td><td>Low threshold</td><td>From $5</td></tr>
+      <tr><td>Payout methods</td><td>PayPal, bank transfer</td><td>PayPal, crypto, gift cards</td></tr>
+      <tr><td>Sign-up bonus</td><td><span class="comp-check">✓</span> Via referral link</td><td><span class="comp-check">✓</span> $10 bonus available</td></tr>
+      <tr><td>Best strategy</td><td>Daily surveys + referrals</td><td>Game offers + survey stacking</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─── DECISION HELPER ─── -->
+<div class="decision-helper" id="decision-helper">
+  <div class="dh-label">Not sure where to start?</div>
+  <div class="dh-title">Choose your goal — we'll point you to the right path.</div>
+  <div class="dh-options">
+    <div class="dh-option d1" onclick="showSection('s1')">
+      <div class="dh-goal">Fastest Money</div>
+      <div class="dh-label2">Take Surveys</div>
+      <div class="dh-note">Start earning in minutes. Low effort, immediate results.</div>
+    </div>
+    <div class="dh-option d2" onclick="showSection('s3')">
+      <div class="dh-goal">Higher Payouts</div>
+      <div class="dh-label2">Play Games &amp; Tasks</div>
+      <div class="dh-note">Bigger per-task rewards. Best for mobile gamers.</div>
+    </div>
+    <div class="dh-option d3" onclick="showSection('s2')">
+      <div class="dh-goal">Long-Term Income</div>
+      <div class="dh-label2">Build Referrals</div>
+      <div class="dh-note">Compounds over time. Earn from people you refer — forever.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- S1: SURVEYS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="section s1" id="section-s1">
+  <button class="back-btn" onclick="showHome()">← Back to all paths</button>
+  <div class="section-eyebrow">Path 1 — Surveys</div>
+  <h2 class="section-title">How to Make Real Money<br />Taking Surveys</h2>
+  <p class="section-intro">Most people give up on surveys because they hit disqualifications and waste time on low-paying ones. This guide shows you how to fix that — build a profile that gets matched to better surveys, know which ones pay, and stack income across AttaPoll and FreeCash.</p>
+  <div class="platform-badges">
+    <span class="pb pb-green">📊 AttaPoll</span>
+    <span class="pb pb-gold">💰 FreeCash</span>
+  </div>
+
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to sign up and start earning surveys in under 5 minutes</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Go to <strong>attapoll.app/join/znjuz</strong> and create a free account with your email</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Download the AttaPoll app (iOS or Android) and log in</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span><strong>Complete your profile fully</strong> — employment, household, vehicle, health. This is the most important step.</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Go to the Surveys tab and start with any available survey. The first few are short — they help calibrate your profile.</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Reach the minimum threshold and cash out via <strong>PayPal</strong></span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Also sign up at <strong>freecash.com/en?ref=2DG2B8</strong> — complete profile surveys there too and stack both platforms daily</span></div>
+    </div>
+    <div class="tldr-bonus">💡 FreeCash sign-up bonus: up to $10 account credit depending on your region — verify your email immediately after signing up to claim it.</div>
+  </div>
+    <p>Platforms match you to surveys based on your demographic profile — age, location, income, household, employment, and more. The more complete and accurate your profile, the more surveys you qualify for and the fewer disqualifications you'll hit.</p>
+    <p>Think of your profile as your resume. A complete resume gets more interviews. Fill it out on every platform before you take your first survey.</p>
+    <ul>
+      <li><strong>Employment status</strong> — full-time, part-time, and self-employed all unlock different survey pools</li>
+      <li><strong>Household income bracket</strong> — unlocks financial and consumer product surveys</li>
+      <li><strong>Homeowner vs renter</strong> — real estate and home improvement surveys pay above average</li>
+      <li><strong>Household size + children's ages</strong> — parenting surveys are premium-priced and frequent</li>
+      <li><strong>Vehicle ownership + make/model</strong> — automotive surveys are short and pay well</li>
+      <li><strong>Health conditions (where asked)</strong> — pharma surveys pay $3–$10 each</li>
+      <li><strong>Job industry and title</strong> — B2B surveys targeting professionals pay $5–$20 per survey</li>
+      <li><strong>Brand usage and shopping habits</strong> — CPG surveys are the most frequent category overall</li>
+    </ul>
+  </div>
+
+  <div class="inline-cta">
+    <p><strong>Ready to build your profile?</strong> Sign up free on AttaPoll — takes under 60 seconds, no card needed.</p>
+    <a class="btn btn-green btn-sm" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">Join AttaPoll Free →</a>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">✅</span> Which Survey Types Actually Pay</h3>
+    <div class="grid2">
+      <div>
+        <div class="tags"><span class="tag tag-green">Prioritize These</span></div>
+        <ul>
+          <li><strong>Pharmaceutical / health</strong> — 10–25 min, pay $3–$10 each</li>
+          <li><strong>Automotive ownership</strong> — fast, $1–$4, high availability</li>
+          <li><strong>B2B / professional</strong> — rare but $5–$20 per survey</li>
+          <li><strong>Political / public opinion</strong> — fast, frequent, good volume</li>
+          <li><strong>New product concepts</strong> — 5–12 min, solid payout ratio</li>
+          <li><strong>Parenting / baby products</strong> — high demand, pays above average</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tags"><span class="tag tag-red">Skip These</span></div>
+        <ul>
+          <li><strong>Sweepstakes-only surveys</strong> — no guaranteed payout</li>
+          <li><strong>30+ min under $1</strong> — terrible time-to-pay ratio</li>
+          <li><strong>10+ screener questions</strong> — high disqualification risk</li>
+          <li><strong>Academic research with no pay</strong> — sometimes disguised as legit</li>
+          <li><strong>Webcam-required surveys</strong> — skip unless pay confirmed upfront</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMON MISTAKES — SURVEYS -->
+  <div class="mistakes-block">
+    <h3><span class="ico">⚠️</span> Common Mistakes That Kill Your Earnings</h3>
+    <ul>
+      <li><strong>Leaving your profile incomplete</strong> — the #1 reason people get disqualified constantly. Fill it out first, fully.</li>
+      <li><strong>Rushing through screener questions</strong> — platforms flag inconsistent answers and reduce your survey access over time</li>
+      <li><strong>Only checking the app once a week</strong> — high-paying surveys fill up within hours; daily checks are non-negotiable</li>
+      <li><strong>Ignoring the small surveys</strong> — $0.50 surveys done in 2 minutes add up faster than waiting for a $5 one that takes 30</li>
+      <li><strong>Not rating completed surveys</strong> — both platforms use feedback to show you better-matched surveys; skipping this hurts your feed</li>
+      <li><strong>Using the same device for multiple accounts</strong> — instant ban on both platforms, no appeal</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">🌍</span> Countries That Get the Best Surveys</h3>
+    <p>Where you live directly affects survey volume and pay rate.</p>
+    <table class="country-table">
+      <thead><tr><th>Country</th><th>Tier</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>🇺🇸 United States</td><td><span class="tier tier-s">S</span></td><td>Most surveys, highest pay, best offer variety</td></tr>
+        <tr><td>🇬🇧 United Kingdom</td><td><span class="tier tier-s">S</span></td><td>Excellent rates, strong consumer panel demand</td></tr>
+        <tr><td>🇦🇺 Australia</td><td><span class="tier tier-s">S</span></td><td>High CPM, fewer panelists = more surveys per person</td></tr>
+        <tr><td>🇨🇦 Canada</td><td><span class="tier tier-a">A</span></td><td>Good rates, bilingual options, solid daily volume</td></tr>
+        <tr><td>🇩🇪 Germany</td><td><span class="tier tier-a">A</span></td><td>Strong for tech and automotive surveys</td></tr>
+        <tr><td>🇧🇷 Brazil</td><td><span class="tier tier-b">B</span></td><td>High volume but lower rates per survey</td></tr>
+        <tr><td>🇮🇳 India</td><td><span class="tier tier-b">B</span></td><td>Large panel, lower payout per survey</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">📊</span> AttaPoll: How to Maximize Earnings</h3>
+    <ul>
+      <li><strong>Check the app every morning</strong> — surveys go live overnight and high-paying ones fill within minutes</li>
+      <li><strong>Answer screener questions carefully</strong> — rushing leads to disqualifications</li>
+      <li><strong>Complete your full profile before taking any surveys</strong> — biggest single unlock for volume</li>
+      <li><strong>Rate surveys after completing</strong> — improves your algorithm match over time</li>
+      <li><strong>Keep notifications on</strong> — premium surveys disappear fast</li>
+      <li><strong>Withdraw at minimum threshold</strong> — PayPal cashout, keeps motivation high</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">💰</span> FreeCash: How to Maximize Earnings</h3>
+    <ul>
+      <li><strong>Try every survey router</strong> — FreeCash pulls from Cint, Lucid, Theorem and others; each shows different surveys</li>
+      <li><strong>Sort offers by highest payout first</strong> — filter by reward, not just availability</li>
+      <li><strong>Complete profile surveys immediately after signup</strong> — pays coins and unlocks better-matched offers</li>
+      <li><strong>Spin the daily bonus wheel</strong> — free coins every day, 10 seconds</li>
+      <li><strong>Check gift card bonus multipliers</strong> — sometimes 10–15% more than PayPal cashout</li>
+    </ul>
+  </div>
+
+  <div class="divider"><span>Free to join — no card required</span></div>
+  <p style="font-size:0.84rem;color:var(--muted);margin-bottom:4px;">Both links include a sign-up bonus. You get a bonus, we earn a small referral commission.</p>
+  <div class="cta-row">
+    <a class="btn btn-green" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">📊 Join AttaPoll — Start Earning Today</a>
+    <a class="btn btn-outline" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener">💰 Join FreeCash Free</a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- S2: REFERRALS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="section s2" id="section-s2">
+  <button class="back-btn" onclick="showHome()">← Back to all paths</button>
+  <div class="section-eyebrow">Path 2 — Referral Side Hustle</div>
+  <h2 class="section-title">The Referral Playbook:<br />How Leverage Works Here</h2>
+  <p class="section-intro">AttaPoll pays you a percentage of what your referrals earn — every month, permanently. Every active person you bring in keeps paying you. Here's the full strategy to build it from zero.</p>
+  <div class="platform-badges">
+    <span class="pb pb-green">📊 AttaPoll Referrals</span>
+  </div>
+
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to get your referral link and start earning passive income</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Sign up at <strong>attapoll.app/join/znjuz</strong> and complete your profile — your real earnings become your credibility</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Open the app menu → tap <strong>"Refer Friends"</strong> → copy your unique referral link</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span>Create a free <strong>Bitly</strong> account and shorten your link so you can track clicks by platform</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Post on <strong>Facebook Groups</strong> (make money from home, side hustle groups) — earnings screenshot + link in comments</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Create a <strong>TikTok account</strong> (@bonustask or similar) — screen record your app earnings, post daily for 30 days</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Answer questions on <strong>Reddit</strong> (r/beermoney, r/sidehustle) and <strong>Quora</strong> with honest reviews + your referral link disclosed</span></div>
+    </div>
+    <div class="tldr-bonus">💡 You earn a % of your referrals' survey earnings every month, permanently. Focus on getting people to activate their profiles — not just sign up.</div>
+  </div>
+    <p>Most side income is linear — you work an hour, you earn for that hour. Referrals break that. When someone you referred completes a survey, you earn without doing anything. That compounds every month as your referral base grows.</p>
+    <ul>
+      <li><strong>Compounding base</strong> — referrals from 3 months ago still pay you today</li>
+      <li><strong>No ongoing effort after acquisition</strong> — post once, earn monthly from that post forever</li>
+      <li><strong>Scales with content output</strong> — more posts = more referrals = higher passive floor</li>
+      <li><strong>Month 1 target: 100 active referrals</strong> — that's $150–$300/month passively from day one</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">🔗</span> Step 1 — Get Set Up in 10 Minutes</h3>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h4>Sign up for AttaPoll</h4><p>Use the link below. Complete your full profile — your real earnings become your credibility when you promote.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h4>Find your referral link in the app</h4><p>Menu → Refer Friends. Copy your unique link. This is what earns you passive income on every referral.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h4>Create a trackable short link</h4><p>Use Bitly (free) or redirect bonustask.com/attapoll to your link. Track which platforms send real signups.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h4>Focus on active users, not just signups</h4><p>Send new referrals a tip: "Complete your profile first." Activated users earn for you. Ghost accounts don't.</p></div></div>
+    </div>
+  </div>
+
+  <div class="inline-cta">
+    <p><strong>Get your referral link now.</strong> It's inside the app under "Refer Friends" — takes 2 minutes to set up.</p>
+    <a class="btn btn-green btn-sm" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">Join AttaPoll Free →</a>
+  </div>
+
+  <!-- COMMON MISTAKES — REFERRALS -->
+  <div class="mistakes-block">
+    <h3><span class="ico">⚠️</span> Common Mistakes That Kill Referral Growth</h3>
+    <ul>
+      <li><strong>Posting your link before earning yourself</strong> — nobody trusts a referral from someone who has never used the platform; get some earnings first</li>
+      <li><strong>Spamming the link without context</strong> — "join this app" posts get ignored; earnings screenshots and honest reviews convert</li>
+      <li><strong>Only using one platform</strong> — Facebook alone won't scale; TikTok + Reddit + Quora compounds your reach significantly</li>
+      <li><strong>Not tracking which platform converts</strong> — without Bitly or similar, you're posting blind and can't double down on what works</li>
+      <li><strong>Giving up in month 1</strong> — referral income is slow to start and fast to compound; most people quit right before the curve hits</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">📘</span> Facebook Groups Strategy</h3>
+    <ul>
+      <li><strong>Join 15–25 targeted groups</strong> — "make money from home", "side hustle Canada", "work from home Ontario"</li>
+      <li><strong>Warm up for 1–2 weeks first</strong> — comment and help people before posting any link</li>
+      <li><strong>Post earnings screenshots</strong> — "Made $47 this week on my phone." Always outperforms pure promo</li>
+      <li><strong>Use native video</strong> — 60-second screen recording of your balance gets 3–5x more reach than text</li>
+      <li><strong>Put your link in the comments, not the post body</strong> — Facebook suppresses posts with external links</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">🎵</span> TikTok Faceless Video Strategy</h3>
+    <ul>
+      <li><strong>Create a dedicated niche account</strong> — @bonustask or @surveyhustle. Link in bio.</li>
+      <li><strong>Core format</strong> — screen recording + earnings overlay + trending audio. No face needed.</li>
+      <li><strong>Post daily for the first 30 days</strong> — TikTok rewards early consistency</li>
+      <li><strong>Show PayPal withdrawal screens</strong> — actual payment confirmations convert best in this niche</li>
+    </ul>
+    <div class="divider"><span>Hook templates</span></div>
+    <div class="hook-card"><div class="hook-platform">Hook #1</div><div class="hook-text">"I made $23 on my phone while watching Netflix last night. Here's the app — takes 2 minutes to set up and pays directly to PayPal."</div></div>
+    <div class="hook-card"><div class="hook-platform">Hook #2</div><div class="hook-text">"POV: You downloaded one free app and it paid your coffee budget for the month. No catch. Here's exactly how."</div></div>
+    <div class="hook-card"><div class="hook-platform">Hook #3 — Curiosity Gap</div><div class="hook-text">"The app that paid me $[X] this month has been on my phone for 6 months. I almost deleted it. Here's why I didn't."</div></div>
+    <div class="hook-card"><div class="hook-platform">Facebook Soft Post</div><div class="hook-text">"Genuine question — has anyone made consistent money with survey apps? I've been tracking mine for 3 months. Link in comments."</div></div>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">💬</span> Reddit &amp; Quora: Evergreen Traffic</h3>
+    <ul>
+      <li><strong>Target high-traffic questions</strong> — "Is AttaPoll legit?", "Best survey apps for Canada", "Apps that pay real money to PayPal"</li>
+      <li><strong>Write thorough, honest answers</strong> — 300–500 words, include real pros and cons</li>
+      <li><strong>Disclose your referral link clearly</strong> — "This is my referral link — full disclosure." Honesty converts better</li>
+      <li><strong>Reddit: post in r/beermoney, r/sidehustle, r/WorkOnline</strong> — read subreddit rules first</li>
+      <li><strong>Quora answers rank on Google</strong> — takes 3–6 months but pays forever once they rank</li>
+    </ul>
+  </div>
+
+  <div class="divider"><span>Start here</span></div>
+  <p style="font-size:0.84rem;color:var(--muted);margin-bottom:4px;">Sign up → Refer Friends in the app → copy your link → start posting.</p>
+  <div class="cta-row">
+    <a class="btn btn-green" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">📊 Get Your AttaPoll Referral Link</a>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- S3: GAMES & TASKS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="section s3" id="section-s3">
+  <button class="back-btn" onclick="showHome()">← Back to all paths</button>
+  <div class="section-eyebrow">Path 3 — Games &amp; Tasks</div>
+  <h2 class="section-title">Get Paid Playing Games<br />&amp; Completing Tasks</h2>
+  <p class="section-intro">Both AttaPoll and FreeCash let you earn by playing mobile games, downloading apps, and completing micro-tasks. Higher per-task payouts than most surveys — if you pick the right offers.</p>
+  <div class="platform-badges">
+    <span class="pb pb-green">📊 AttaPoll</span>
+    <span class="pb pb-gold">💰 FreeCash</span>
+  </div>
+
+  <!-- TLDR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — Start Here</div>
+    <div class="tldr-title">How to start earning from games and tasks in under 10 minutes</div>
+    <div class="tldr-steps">
+      <div class="tldr-step"><span class="tldr-step-num">1</span><span>Sign up at <strong>freecash.com/en?ref=2DG2B8</strong> — FreeCash has the largest game offer wall. Verify your email to claim your sign-up bonus (up to $10, region dependent).</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">2</span><span>Go to the <strong>Earn</strong> tab → filter by <strong>Games</strong> → sort by highest reward</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">3</span><span>Read the full requirement before accepting any offer — note the deadline and confirm the milestone is achievable without paying</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">4</span><span>Download the game, <strong>screenshot your starting point</strong>, and play daily until you hit the milestone</span></div>
+      <div class="tldr-step"><span class="tldr-step-num">5</span><span>Once complete, the reward is credited automatically. If it doesn't track within 24–48hrs, submit a <strong>support ticket with your screenshots</strong></span></div>
+      <div class="tldr-step"><span class="tldr-step-num">6</span><span>Also sign up at <strong>attapoll.app/join/znjuz</strong> and check their game/task offers — stack both platforms for maximum daily output</span></div>
+    </div>
+    <div class="tldr-bonus">💡 Best starting offers: look for puzzle or idle games with a "Reach Level X" requirement and no time limit. Those are the safest and most consistent earners.</div>
+  </div>
+    <p>Game offers are performance-based. Download a game, reach a specific milestone, get paid the listed amount. Payout is fixed and shown upfront — no surprises.</p>
+    <ul>
+      <li><strong>Read the full requirement</strong> — "Reach level 10" vs "Reach level 10 within 7 days" are completely different</li>
+      <li><strong>Check if the milestone is free to reach</strong> — if progression is paywalled, skip it</li>
+      <li><strong>Pick high payout offers over fast ones</strong> — a $10 offer in 4 hours beats a $1 offer in 30 minutes</li>
+      <li><strong>Run one game offer at a time</strong> — splitting focus risks missing deadlines</li>
+      <li><strong>Screenshot your progress</strong> — if a reward fails to track, screenshots are your proof</li>
+      <li><strong>Stack offers sequentially</strong> — finish one, immediately pick the next highest payout</li>
+    </ul>
+  </div>
+
+  <!-- COMMON MISTAKES — GAMES -->
+  <div class="mistakes-block">
+    <h3><span class="ico">⚠️</span> Common Mistakes That Cost You Money</h3>
+    <ul>
+      <li><strong>Starting pay-to-win games</strong> — you'll hit a wall before the milestone and either spend money or forfeit the offer</li>
+      <li><strong>Running multiple game offers at once</strong> — splitting time across games means finishing none of them before deadlines</li>
+      <li><strong>Not screenshotting progress</strong> — tracking failures happen; without screenshots you have no case for a dispute</li>
+      <li><strong>Forgetting to cancel free trial offers</strong> — set a calendar reminder the moment you start one, without exception</li>
+      <li><strong>Picking offers by payout alone without checking the deadline</strong> — a $15 offer with a 3-day deadline may be impossible; always check both</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">🏆</span> Game Types That Pay Best</h3>
+    <div class="grid2">
+      <div>
+        <div class="tags"><span class="tag tag-green">Best ROI</span></div>
+        <ul>
+          <li><strong>Strategy / city builders</strong> — Rise of Kingdoms, Evony — high milestone payouts</li>
+          <li><strong>RPG / level-based games</strong> — clear progression = predictable tracking</li>
+          <li><strong>Puzzle games</strong> — fast to level, easy milestone completion</li>
+          <li><strong>Casino / slot apps</strong> — fast progression, no real money required</li>
+          <li><strong>Idle / clicker games</strong> — run in background, low active effort</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tags"><span class="tag tag-red">Avoid These</span></div>
+        <ul>
+          <li><strong>Pay-to-win games</strong> — free progression too slow to hit milestones</li>
+          <li><strong>Sports manager games</strong> — locked behind real-time timers</li>
+          <li><strong>Vague milestone requirements</strong> — "be active 7 days" often doesn't track</li>
+          <li><strong>Competitive / battle royale</strong> — skill-dependent, progress not guaranteed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="inline-cta">
+    <p><strong>FreeCash has the largest game offer wall.</strong> Sign up free and browse available offers immediately after creating your account.</p>
+    <a class="btn btn-gold btn-sm" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener">Join FreeCash Free →</a>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">📱</span> App Downloads &amp; Free Trial Offers</h3>
+    <ul>
+      <li><strong>Free trial offers</strong> — sign up, get paid, cancel before billing. High payout, low effort.</li>
+      <li><strong>App installs with actions</strong> — download + create account = reward. 2–3 minutes each.</li>
+      <li><strong>VPN and utility apps</strong> — frequent, easy to complete, consistent pay</li>
+      <li><strong>Finance apps</strong> — pay well but require real info; only if you're comfortable</li>
+      <li><strong>Always set a cancellation reminder</strong> — forgetting is the most common and costly mistake</li>
+    </ul>
+  </div>
+
+  <div class="content-block">
+    <h3><span class="ico">📅</span> A 30-Minute Daily Routine That Stacks Income</h3>
+    <ul>
+      <li><strong>Morning — 5 min:</strong> Open AttaPoll, claim available surveys, start the first one</li>
+      <li><strong>Morning — 5 min:</strong> Open FreeCash, spin the daily bonus wheel, check for new offers</li>
+      <li><strong>Afternoon — 10 min:</strong> Complete 2–3 AttaPoll surveys during lunch or a break</li>
+      <li><strong>Evening — 10 min:</strong> Play your active game offer to advance the milestone</li>
+      <li><strong>Evening — 5 min:</strong> Check FreeCash offer wall for fast app install offers</li>
+      <li><strong>Weekly — 10 min:</strong> Review earnings, withdraw if at threshold, pick your next game offer</li>
+    </ul>
+  </div>
+
+  <div class="divider"><span>Both platforms are free — no investment needed</span></div>
+  <p style="font-size:0.84rem;color:var(--muted);margin-bottom:4px;">Game offers and task sections unlock immediately after signing up.</p>
+  <div class="cta-row">
+    <a class="btn btn-green" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener">📊 Join AttaPoll Free</a>
+    <a class="btn btn-gold" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener">💰 Join FreeCash — Browse Game Offers</a>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <img src="logo.png" alt="BonusTask.com" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=\'font-family:var(--ff-d);font-size:1.1rem;font-weight:800;margin-bottom:12px;\'>Bonus<span style=\'color:var(--green)\'>Task</span>.com</div>')" />
+  <p>
+    BonusTask.com contains referral links. If you sign up using our links, we may earn a small commission at no cost to you.<br />
+    All platforms listed are independently used and verified. Earnings vary by country, effort, and platform availability.<br />
+    This site does not guarantee any specific income. Results shown are examples, not typical outcomes.
+  </p>
+</footer>
+
+<!-- ─── STICKY MOBILE START HERE ─── -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="#path-cards" onclick="event.preventDefault();scrollToPaths()">✦ Start Here — Pick Your Path ↓</a>
+</div>
+
+<script>
+  /* ── HOME BLOCK IDS ── */
+  const homeBlocks = ['home','how-it-works','calculator','micro-hook','social-proof','path-cards','comparison','decision-helper'];
+
+  function showHome() {
+    homeBlocks.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = id === 'path-cards' ? 'grid' : 'block';
+    });
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    setNav('nav-home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showSection(id) {
+    homeBlocks.forEach(bid => {
+      const el = document.getElementById(bid);
+      if (el) el.style.display = 'none';
+    });
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('section-' + id).classList.add('active');
+    setNav('nav-' + id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function setNav(id) {
+    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
+  }
+
+  function scrollToPaths() {
+    const el = document.getElementById('path-cards');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ── CALCULATOR ── */
+  const calcData = {
+    10:  { week: '$17',  month: '$75',    year: '$900'   },
+    20:  { week: '$35',  month: '$150',   year: '$1,800' },
+    30:  { week: '$52',  month: '$225',   year: '$2,700' },
+    60:  { week: '$105', month: '$450',   year: '$5,400' },
+  };
+  function setCalc(btn, mins) {
+    document.querySelectorAll('.calc-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = calcData[mins];
+    document.getElementById('calc-week').textContent  = d.week;
+    document.getElementById('calc-month').textContent = d.month;
+    document.getElementById('calc-year').textContent  = d.year;
+  }
+
+  /* ── COUNTER ANIMATION ── */
+  function animateCounter() {
+    const el = document.getElementById('counter');
+    const target = 2847;
+    const start = target - 200;
+    let current = start;
+    const step = () => {
+      current += Math.ceil((target - current) / 8);
+      el.textContent = current.toLocaleString();
+      if (current < target) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString();
+    };
+    requestAnimationFrame(step);
+  }
+  window.addEventListener('load', animateCounter);
+
+  /* ── STICKY CTA: hide when on home, show on section pages ── */
+  // Always visible on mobile regardless — CTAs link to platforms
+</script>
+</body>
+</html>
