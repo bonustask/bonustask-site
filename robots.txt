@@ -1,0 +1,13 @@
+# BonusTask.com — robots.txt
+# https://bonustask.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bonustask.com/sitemap.xml
+
+# Block access to any future admin or private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
