@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Make Up to $20 a Day From Your Phone</title>
-  <meta name="description" content="Make up to $20 a day from your phone with simple paid surveys. Fast signup, low cashout, and easy mobile earnings." />
+  <title>Best Survey Apps</title>
+  <meta name="description" content="Compare AttaPoll and Freecash. Find the best survey and rewards app for your country, with a quick quiz to choose the right path." />
   <style>
     :root {
       --bg: #f6f8fb;
@@ -16,7 +16,6 @@
       --primary-dark: #5b21b6;
       --accent: #f3e8ff;
       --success: #059669;
-      --warning: #f59e0b;
       --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
       --radius: 20px;
       --max: 1120px;
@@ -40,7 +39,7 @@
     }
 
     .topbar {
-      background: #fff;
+      background: rgba(255,255,255,0.92);
       border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
@@ -87,15 +86,17 @@
     }
 
     .nav-cta:hover,
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover {
+      background: var(--primary-dark);
+    }
 
     .hero {
-      padding: 56px 0 26px;
+      padding: 56px 0 28px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
@@ -116,7 +117,7 @@
 
     h1 {
       margin: 0 0 14px;
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      font-size: clamp(2.2rem, 4vw, 4.1rem);
       line-height: 1.02;
       letter-spacing: -0.03em;
     }
@@ -124,8 +125,19 @@
     .hero p {
       font-size: 1.08rem;
       color: var(--muted);
-      margin: 0 0 24px;
+      margin: 0 0 16px;
       max-width: 620px;
+    }
+
+    .geo-title {
+      color: var(--text);
+      margin-bottom: 10px !important;
+    }
+
+    .geo-line {
+      color: var(--primary-dark) !important;
+      font-weight: 700;
+      margin-bottom: 22px !important;
     }
 
     .cta-row {
@@ -145,6 +157,8 @@
       font-weight: 800;
       transition: 0.2s ease;
       font-size: 1rem;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -188,7 +202,6 @@
       background: #101827;
       border-radius: 32px;
       padding: 14px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
     }
 
     .screen {
@@ -283,15 +296,13 @@
 
     .steps,
     .features,
-    .proof-grid,
     .faq-grid {
       display: grid;
       gap: 18px;
     }
 
     .steps { grid-template-columns: repeat(3, 1fr); }
-    .features { grid-template-columns: repeat(4, 1fr); }
-    .proof-grid { grid-template-columns: repeat(3, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
     .faq-grid { grid-template-columns: repeat(2, 1fr); }
 
     .card {
@@ -325,21 +336,16 @@
       margin: 0;
     }
 
+    .card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
     .feature-icon {
       font-size: 1.4rem;
       margin-bottom: 10px;
-    }
-
-    .proof-quote {
-      font-size: 1.03rem;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .proof-name {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
     }
 
     .highlight {
@@ -362,7 +368,7 @@
 
     .highlight p {
       margin: 0;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.88);
       max-width: 640px;
     }
 
@@ -371,9 +377,51 @@
       color: var(--primary-dark);
     }
 
-    .faq-item h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
+    .comparison-table-wrap {
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 0.95rem;
+    }
+
+    .quiz-shell {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .quiz-question {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+      text-align: center;
+    }
+
+    .quiz-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .quiz-result h3 {
+      margin-top: 0;
+      font-size: 1.35rem;
     }
 
     .disclaimer {
@@ -395,7 +443,6 @@
       .highlight,
       .steps,
       .features,
-      .proof-grid,
       .faq-grid {
         grid-template-columns: 1fr;
       }
@@ -423,7 +470,7 @@
         <div class="logo-badge">$</div>
         <span>QuickEarn</span>
       </div>
-      <a class="nav-cta" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Start Free</a>
+      <a class="nav-cta" href="#quiz">Find My Best Option</a>
     </div>
   </header>
 
@@ -431,19 +478,20 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Simple paid surveys from your phone</div>
-          <h1>Make up to <br>$20 a day <br>in your free time</h1>
-          <p>
-            Looking for an easy side hustle you can do from your phone? Sign up, answer surveys, and cash out as you go. No complicated setup. Just simple earnings in your spare time.
-          </p>
+          <div class="eyebrow">Simple paid surveys, games, and offers from your phone</div>
+          <h1 id="heroTitle">Best Survey Apps in Your Country</h1>
+          <p class="geo-title">Compare AttaPoll and Freecash and pick the one that fits how you actually want to earn.</p>
+          <p id="geoLine" class="geo-line">Loading your region...</p>
+
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Get Started Free</a>
-            <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+            <a class="btn btn-primary" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Start with AttaPoll</a>
+            <a class="btn btn-secondary" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener noreferrer">Try Freecash</a>
           </div>
+
           <div class="hero-points">
-            <span>Fast signup</span>
-            <span>Phone-friendly</span>
-            <span>Cash out when ready</span>
+            <span>Surveys</span>
+            <span>Games & offers</span>
+            <span>Country-based personalization</span>
           </div>
         </div>
 
@@ -451,48 +499,134 @@
           <div class="phone-shell">
             <div class="screen">
               <div class="screen-top">
-                <span>Today’s Earnings</span>
-                <span>4:20 PM</span>
+                <span>Today’s Earning Paths</span>
+                <span id="screenCountry">Local</span>
               </div>
+
               <div class="earn-box">
-                <div class="earn-label">Potential daily total</div>
+                <div class="earn-label">Potential daily goal</div>
                 <div class="earn-value">Up to $20</div>
-                <div class="earn-label">Complete short surveys when they pop up</div>
+                <div class="earn-label">The best option depends on whether you prefer quick surveys or longer game and offer tasks.</div>
               </div>
+
               <div class="mini-list">
                 <div class="mini-item">
                   <div>
-                    <strong>Quick Opinion Survey</strong>
-                    <small>3 mins</small>
+                    <strong>AttaPoll</strong>
+                    <small>Survey-first experience</small>
                   </div>
-                  <span class="pill">$0.80</span>
+                  <span class="pill">Quick</span>
                 </div>
                 <div class="mini-item">
                   <div>
-                    <strong>Shopping Habits</strong>
-                    <small>8 mins</small>
+                    <strong>Freecash</strong>
+                    <small>Games, surveys, offers</small>
                   </div>
-                  <span class="pill">$2.10</span>
+                  <span class="pill">Mixed</span>
                 </div>
                 <div class="mini-item">
                   <div>
-                    <strong>Streaming & Apps</strong>
-                    <small>10 mins</small>
+                    <strong>Best for short sessions</strong>
+                    <small>AttaPoll</small>
                   </div>
-                  <span class="pill">$3.40</span>
+                  <span class="pill">Easy</span>
                 </div>
                 <div class="mini-item">
                   <div>
-                    <strong>Food Delivery Poll</strong>
-                    <small>5 mins</small>
+                    <strong>Best for bigger tasks</strong>
+                    <small>Freecash</small>
                   </div>
-                  <span class="pill">$1.25</span>
+                  <span class="pill">Higher upside</span>
                 </div>
               </div>
+
               <div style="margin-top:16px;">
-                <a class="btn btn-primary" style="width:100%;" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Open Referral Link</a>
+                <a class="btn btn-primary" style="width:100%;" href="#quiz">Take the 20-second quiz</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="choose-platform">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Choose what fits you best</h2>
+          <p>Both platforms can work. The better choice depends on how you like earning, how much time you want to spend, and what kind of offers you actually enjoy.</p>
+        </div>
+
+        <div class="features">
+          <div class="card">
+            <div class="feature-icon">📝</div>
+            <h3>AttaPoll</h3>
+            <p>Best for people who want a cleaner, survey-first experience. Good if you want to jump in, answer a few questions, and move on.</p>
+            <ul>
+              <li>Best if you mainly want surveys</li>
+              <li>Good for quick check-ins during the day</li>
+              <li>Simpler overall experience</li>
+              <li>Better fit for low-effort users</li>
+            </ul>
+            <div style="margin-top:16px;">
+              <a class="btn btn-primary" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Join AttaPoll</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="feature-icon">🎮</div>
+            <h3>Freecash</h3>
+            <p>Best for people who do not mind spending a bit more time on games, installs, offers, and mixed tasks alongside surveys.</p>
+            <ul>
+              <li>Better if you want games plus surveys</li>
+              <li>More variety in how you earn</li>
+              <li>Better fit for users willing to test offers</li>
+              <li>Can suit longer sessions better</li>
+            </ul>
+            <div style="margin-top:16px;">
+              <a class="btn btn-primary" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener noreferrer">Join Freecash</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:22px;">
+          <h3>Quick comparison</h3>
+          <div class="comparison-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>AttaPoll</th>
+                  <th>Freecash</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Primary focus</td>
+                  <td>Surveys first</td>
+                  <td>Games, offers, surveys</td>
+                </tr>
+                <tr>
+                  <td>Ease of use</td>
+                  <td>Very simple</td>
+                  <td>More moving parts</td>
+                </tr>
+                <tr>
+                  <td>Time commitment</td>
+                  <td>Short sessions</td>
+                  <td>Short to longer tasks</td>
+                </tr>
+                <tr>
+                  <td>Best user type</td>
+                  <td>Survey-focused</td>
+                  <td>Offer and game-focused</td>
+                </tr>
+                <tr>
+                  <td>Good starting point</td>
+                  <td>Low effort side cash</td>
+                  <td>Mixed earning strategy</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -502,56 +636,46 @@
       <div class="wrap">
         <div class="section-head">
           <h2>How it works</h2>
-          <p>Pretty simple. Sign up, answer surveys that match your profile, and cash out as you build up your balance.</p>
+          <p>Use the quiz below or go straight to the option that matches your style.</p>
         </div>
+
         <div class="steps">
           <div class="card">
             <div class="num">1</div>
-            <h3>Create your account</h3>
-            <p>Use the signup link and set up your profile in a few minutes so the platform can match you with relevant surveys.</p>
+            <h3>Pick your earning style</h3>
+            <p>Do you want quick surveys, or are you open to games and longer offers too?</p>
           </div>
           <div class="card">
             <div class="num">2</div>
-            <h3>Complete surveys</h3>
-            <p>Check for available surveys throughout the day. Short ones can add up fast when you stay consistent.</p>
+            <h3>Join the best fit</h3>
+            <p>Start with AttaPoll if you want fast survey sessions. Start with Freecash if you want more offer variety.</p>
           </div>
           <div class="card">
             <div class="num">3</div>
-            <h3>Cash out your earnings</h3>
-            <p>Once you build up your balance, cash out and keep stacking extra money from your spare time.</p>
+            <h3>Use spare time better</h3>
+            <p>Check in during the day, complete tasks that make sense for you, and build up side cash over time.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="quiz">
       <div class="wrap">
         <div class="section-head">
-          <h2>Why people like survey apps</h2>
-          <p>They are easy to start, require no special skills, and fit into small pockets of free time during the day.</p>
+          <h2>Not sure where to start?</h2>
+          <p>Take this quick quiz and get the best fit.</p>
         </div>
-        <div class="features">
-          <div class="card">
-            <div class="feature-icon">📱</div>
-            <h3>Made for mobile</h3>
-            <p>Use it from your phone while you’re on a break, watching TV, or just killing time.</p>
-          </div>
-          <div class="card">
-            <div class="feature-icon">⏱️</div>
-            <h3>Short tasks</h3>
-            <p>Many surveys only take a few minutes, so it is easy to fit them into your day.</p>
-          </div>
-          <div class="card">
-            <div class="feature-icon">💸</div>
-            <h3>Extra cash</h3>
-            <p>A good way to make side money for small bills, food, or just extra spending money.</p>
-          </div>
-          <div class="card">
-            <div class="feature-icon">🚀</div>
-            <h3>Easy to start</h3>
-            <p>No resume, no interview, and no long setup. Just sign up and start checking offers.</p>
+
+        <div class="card quiz-shell">
+          <div id="quizBox">
+            <div class="quiz-question">What sounds more like you?</div>
+            <div class="quiz-actions">
+              <button class="btn btn-primary" onclick="quizStep(1, 'surveys')">I want quick surveys</button>
+              <button class="btn btn-secondary" onclick="quizStep(1, 'games')">I want games and offers too</button>
+            </div>
           </div>
         </div>
+        <p class="disclaimer">This page contains referral links. Earnings are not guaranteed and depend on country, profile, available offers, and time spent.</p>
       </div>
     </section>
 
@@ -559,13 +683,11 @@
       <div class="wrap">
         <div class="highlight">
           <div>
-            <h2>Start with one app. Build from there.</h2>
-            <p>
-              This is a simple place to start if you want to make extra money from your phone. Use the referral link below and get set up in a few minutes.
-            </p>
+            <h2>Start with the right path for your country and your style</h2>
+            <p>AttaPoll makes more sense for people who want quick surveys. Freecash makes more sense for people open to games, offers, and longer earning sessions.</p>
           </div>
           <div>
-            <a class="btn btn-primary" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Join Now</a>
+            <a class="btn btn-primary" href="#quiz">Take the quiz</a>
           </div>
         </div>
       </div>
@@ -575,35 +697,134 @@
       <div class="wrap">
         <div class="section-head">
           <h2>What people usually ask</h2>
-          <p>Basic questions people have before they try a survey app.</p>
+          <p>Basic questions before getting started.</p>
         </div>
         <div class="faq-grid">
-          <div class="card faq-item">
-            <h3>How much can I make?</h3>
-            <p>Earnings vary based on your country, profile, and available surveys. Some people use it for a few extra dollars a day, while others aim higher when more surveys are available.</p>
+          <div class="card">
+            <h3>Which one is easier?</h3>
+            <p>AttaPoll is generally the simpler path. Freecash usually makes more sense if you want more offer variety.</p>
           </div>
-          <div class="card faq-item">
-            <h3>Do I need a computer?</h3>
-            <p>No. This kind of app is designed to work well on mobile, which is why a lot of people use it from their phone.</p>
+          <div class="card">
+            <h3>Can I use both?</h3>
+            <p>Yes. A lot of people start with one and add the other later depending on what they prefer.</p>
           </div>
-          <div class="card faq-item">
-            <h3>How fast can I start?</h3>
-            <p>You can usually sign up pretty quickly and start checking for surveys right after your account is set up.</p>
+          <div class="card">
+            <h3>What if my country gets fewer offers?</h3>
+            <p>Offer volume varies by country. That is why the page personalizes the headline by country and keeps the recommendation style-based too.</p>
           </div>
-          <div class="card faq-item">
-            <h3>Is it full-time income?</h3>
-            <p>No. Think of it more as side money or extra cash, not a guaranteed full-time income source.</p>
+          <div class="card">
+            <h3>Can I show a real signup number by city?</h3>
+            <p>No, not unless you are actually tracking and storing those signups. This file uses a manual number you can edit so you are not faking data.</p>
           </div>
         </div>
-        <p class="disclaimer">Earnings are not guaranteed and depend on survey availability, location, profile match, and time spent.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>© 2026 QuickEarn. This page is an independent landing page that links to a third-party survey app through a referral link.</p>
+      <p>© 2026 QuickEarn. Independent comparison page for referral links.</p>
     </div>
   </footer>
+
+  <script>
+    const MANUAL_CITY_SIGNUPS = 127;
+
+    const countryNames = {
+      CA: "Canada",
+      US: "the United States",
+      GB: "the United Kingdom",
+      AU: "Australia",
+      NZ: "New Zealand",
+      IE: "Ireland"
+    };
+
+    function setGeoText(data) {
+      const countryCode = data.country || "";
+      const city = data.city || "";
+      const country = countryNames[countryCode] || countryCode || "Your Country";
+
+      const heroTitle = document.getElementById("heroTitle");
+      const geoLine = document.getElementById("geoLine");
+      const screenCountry = document.getElementById("screenCountry");
+
+      heroTitle.textContent = `Best Survey Apps in ${country}`;
+      screenCountry.textContent = country;
+
+      if (city) {
+        geoLine.textContent = `${MANUAL_CITY_SIGNUPS}+ users in ${city} have signed up through this page for AttaPoll or Freecash.`;
+      } else {
+        geoLine.textContent = `Best survey and offer options for users in ${country}.`;
+      }
+    }
+
+    fetch("/api/geo")
+      .then(response => response.json())
+      .then(data => setGeoText(data))
+      .catch(() => {
+        setGeoText({ country: "CA", city: "" });
+      });
+
+    let quizData = {};
+
+    function quizStep(step, answer) {
+      const quizBox = document.getElementById("quizBox");
+
+      if (step === 1) {
+        quizData.type = answer;
+        quizBox.innerHTML = `
+          <div class="quiz-question">How much time do you want to spend?</div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary" onclick="quizStep(2, 'low')">Just a few minutes here and there</button>
+            <button class="btn btn-secondary" onclick="quizStep(2, 'high')">I am open to longer sessions</button>
+          </div>
+        `;
+        return;
+      }
+
+      if (step === 2) {
+        quizData.time = answer;
+
+        let resultHtml = "";
+
+        if (quizData.type === "surveys" && quizData.time === "low") {
+          resultHtml = `
+            <div class="quiz-result">
+              <h3>Best fit: AttaPoll</h3>
+              <p>You want quick, simple surveys with less friction. AttaPoll makes more sense for that style.</p>
+              <div class="quiz-actions">
+                <a class="btn btn-primary" href="https://attapoll.app/join/znjuz" target="_blank" rel="noopener noreferrer">Start with AttaPoll</a>
+                <button class="btn btn-secondary" onclick="resetQuiz()">Start over</button>
+              </div>
+            </div>
+          `;
+        } else {
+          resultHtml = `
+            <div class="quiz-result">
+              <h3>Best fit: Freecash</h3>
+              <p>You are open to games, mixed offers, and longer tasks. Freecash makes more sense for that path.</p>
+              <div class="quiz-actions">
+                <a class="btn btn-primary" href="https://freecash.com/en?ref=2DG2B8" target="_blank" rel="noopener noreferrer">Start with Freecash</a>
+                <button class="btn btn-secondary" onclick="resetQuiz()">Start over</button>
+              </div>
+            </div>
+          `;
+        }
+
+        quizBox.innerHTML = resultHtml;
+      }
+    }
+
+    function resetQuiz() {
+      quizData = {};
+      document.getElementById("quizBox").innerHTML = `
+        <div class="quiz-question">What sounds more like you?</div>
+        <div class="quiz-actions">
+          <button class="btn btn-primary" onclick="quizStep(1, 'surveys')">I want quick surveys</button>
+          <button class="btn btn-secondary" onclick="quizStep(1, 'games')">I want games and offers too</button>
+        </div>
+      `;
+    }
+  </script>
 </body>
 </html>
